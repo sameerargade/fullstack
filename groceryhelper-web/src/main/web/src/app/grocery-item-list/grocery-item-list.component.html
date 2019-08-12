@@ -1,0 +1,53 @@
+<div class="row stretch-vertical">
+  <div class="col-sm-3 col-md-2 sidebar">
+  </div>
+  <form #searchForm="ngForm">
+      <label [for]="tag" class="array-item-title">
+          Name</label>
+    <input name="tag" [(ngModel)]="searchItemModel.tag" required>
+    <button type="button" class="btn btn-primary mr-2" value="search" (click) =search()></button>
+    <button type="button" class="btn btn-secondary ml-5 rounded" value="cancel" (click) =navigateroot()></button>
+
+  </form>
+</div>
+{{errorMessage}}
+<table class="table table-striped table-bordered">
+  <tbody>
+    <th>Grocery Item</th>
+    <th>Description</th>
+    <th>Tag</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <tr
+      *ngFor="let row of groceryItems; let idx = index"
+      [ngClass]="{ myStyle: 0 === idx % 2 }"
+    >
+      <td>
+        {{ row.name }}
+      </td>
+      <td>{{ row.description}}</td>
+      <td>{{ row.tag}}</td>
+
+      <td>
+          
+
+        <a
+          class="glyphicon glyphicon-folder-open"
+          routerLink="/grocery-item-update/{{ row.id }}"
+        ></a>
+      </td>
+      <td >
+          <a href="#" id="{{row.id}}"
+          class="text-center glyphicon glyphicon-download-alt"
+           (click)="deleteGroceryItem($event)"></a>
+        <!-- <a
+          class="glyphicon glyphicon-folder-open"
+          routerLink="/app/lodgement/view/{{ row.id }}"
+        ></a> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="groceryItems?.length > 0" class="text-center">
+  <!-- <pagination [totalItems]="50" [itemsPerPage]="10"  (pageChanged)="onPageNavigation($event)"></pagination> -->
+</div>
