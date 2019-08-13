@@ -1,37 +1,42 @@
-
 <div class="row stretch-vertical">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <!-- <side-panel heading=""></side-panel> -->
+  </div>
+  <div class="form-group">
+  <div class="form-group">
+    <h3>Add Grocery Item</h3>
+  </div>
+  <form #form="ngForm">
+    <p>{{ validationMessage }}</p>
+    <div class="form-group ">
+      <label [for]="name" class="array-item-title"> Name &nbsp;</label>
 
-        <div class="col-sm-3 col-md-2 sidebar">
-            <!-- <side-panel heading=""></side-panel> -->
-        </div>
-        <div class="card-container">
-                
-                    <div class="col-md-10">
-                        <h3>Add Grocery Item</h3>
-                    </div>
-               
-   <form #form="ngForm"  >
-     <p> {{validationMessage}} </p> 
-        <div class="form-group ">
-                <label [for]="name" class="array-item-title">
-                        Name</label>
-               
-       <input type="text"  ngModel name="name"  required 
-       #name="ngModel">
-       </div>
-       <div class="form-group ">
-            <label [for]="description" class="array-item-title">
-                    Description</label>
-       <input type="text" ngModel name="description" required  >
+      <input type="text" class="form-control" ngModel name="name" required #name="ngModel" />
     </div>
     <div class="form-group ">
-            <label [for]="tag" class="array-item-title">
-                    Tag</label>
-       <input type="text" ngModel name="tag" required  >
+      <label [for]="description" class="array-item-title">
+        Description&nbsp;</label
+      >
+      <input type="text" class="form-control" ngModel name="description" required />
     </div>
-       <button type="button" class="btn btn-primary mr-2" (click)="onSubmit(form)"  value="Submit">Save</button>
-       <input class="btn btn-secondary ml-5 rounded" type="button" value="Cancel"
-       (click)="navigateRoot()">   </form>
-       </div>
-       
+    <div class="form-group ">
+      <label [for]="tag" class="array-item-title"> Tag&nbsp;</label>
+      <input type="text"  ngModel name="tag" class="form-control" required />
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary mr-2"
+      (click)="onSubmit(form)"
+      value="Submit"
+    >
+      Save
+    </button>
+    <input
+      class="btn btn-secondary ml-5 rounded"
+      type="button"
+      value="Cancel"
+      (click)="navigateRoot()"
+    />
+  </form>
+</div>
 </div>

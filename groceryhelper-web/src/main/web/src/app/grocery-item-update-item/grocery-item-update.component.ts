@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GroceryItemModel } from '../model/grocery-item-model';
 import {NgForm} from '@angular/forms';
 import { GroceryItemUpdateService } from './grocery-item-update.service';
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class GroceryItemUpdateComponent implements OnInit {
    //form:NgForm = new NgForm(null,null);
    @ViewChild('updateForm',{static:false}) 
    updateForm : any;
-   constructor(private router: Router,
+   constructor(private router: Router, private location:Location,
                     private route: ActivatedRoute, private groceryItemUpdateService:GroceryItemUpdateService)  {
                   console.log('constructir');
    }
@@ -68,7 +69,7 @@ export class GroceryItemUpdateComponent implements OnInit {
    
  }
   public navigateRoot(){
-
+   this.location.back();
   }
  
 }

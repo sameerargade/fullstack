@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GroceryItemModel } from '../model/grocery-item-model';
 import {NgForm} from '@angular/forms';
 import { GroceryItemAddService } from './grocery-item-add.service';
-
+import {Location} from '@angular/common';
 
 @Component({
    selector: 'groceryitemadd',
@@ -14,7 +14,7 @@ export class GroceryItemAddComponent implements OnInit {
    groceryItemModel:GroceryItemModel = new GroceryItemModel();
    validationMessage : string = "";
    constructor(private router: Router,
-               
+               private location :Location,
                private route: ActivatedRoute, private groceryItemAddService:GroceryItemAddService)  {
                   console.log('constructir');
    }
@@ -54,7 +54,7 @@ export class GroceryItemAddComponent implements OnInit {
    
  }
   public navigateRoot(){
-
+   this.location.back();
   }
  
 }

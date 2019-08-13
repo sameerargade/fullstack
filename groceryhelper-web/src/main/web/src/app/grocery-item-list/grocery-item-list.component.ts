@@ -104,4 +104,8 @@ export class GroceryItemListComponent implements OnInit {
       groceryDetails: this.fb.array(arr)
     });
   }
+  navigateroot(){
+    this.searchItemModel.tag='';
+    this.loadData(); 
+  }
 }
