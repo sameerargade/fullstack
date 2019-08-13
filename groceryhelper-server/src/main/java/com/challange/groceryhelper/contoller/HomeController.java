@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 
-@RequestMapping("/home")
+@RequestMapping({"/home","","/grocery-item-add","/grocery-item-list","/dashboard","grocery-item-update/{id}"})
 
 public class HomeController {
 

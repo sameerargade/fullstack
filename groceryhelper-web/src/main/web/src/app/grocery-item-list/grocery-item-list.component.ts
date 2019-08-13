@@ -81,6 +81,7 @@ export class GroceryItemListComponent implements OnInit {
         this.errorMessage = "Error Occured while deleting item";
       }
     );
+    this.loadData();
     return false;
   }
   public saveTag(tagEvent: any) {
