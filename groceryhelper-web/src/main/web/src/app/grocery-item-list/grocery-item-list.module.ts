@@ -5,7 +5,7 @@ import { GroceryItemListRoutingModule } from './grocery-item-list-routing.module
 import { GroceryItemListComponent } from './grocery-item-list.component';
 
 
-import {FormsModule,ReactiveFormsModule} from '@angular/forms'  
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';  
  
 
 @NgModule({
